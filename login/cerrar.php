@@ -1,6 +1,11 @@
 <?php
 session_start();
-session_unset();
-session_destroy();
+if($_SESSION['usuario']!= null){
+    session_unset();
+    session_destroy();
+    header("location: index.html");
+}else{
+    header("location: index.html");
+}
 
 ?>
